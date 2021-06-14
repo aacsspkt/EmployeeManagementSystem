@@ -29,7 +29,7 @@ Dashboard for Admin User
 *	View Details of Employee
 *	Listing of All Employee
 
-###Leave
+### Leave
 *	Adding  New Leave
 *	Edit the existing  Leave
 *	Deleting Leave
