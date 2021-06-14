@@ -8,49 +8,54 @@ Login for Admin
 Logout functionality
 Dashboard for Admin User
 
-###Manage Department
+### Manage Department
 *	Adding  New Department
 *	Edit the existing  Department
 *	Deleting Department
 *	View Details of Department
 *	Listing of All Department
-###Manage Designation
+
+### Manage Designation
 *	Adding  New Designation
 *	Edit the existing  Designation
 *	Deleting Designation
 *	View Details of Designation
 *	Listing of All Designation
-###Employee
+
+### Employee
 *	Adding  New Employee
 *	Edit the existing  Employee
 *	Deleting Employee
 *	View Details of Employee
 *	Listing of All Employee
+
 ###Leave
 *	Adding  New Leave
 *	Edit the existing  Leave
 *	Deleting Leave
 *	View Details of Leave
 *	Listing of All Leave
-###Salary
+
+### Salary
 *	Adding  New Salary
 *	Edit the existing  Salary
 *	Deleting Salary
 *	View Details of Salary
 *	Listing of All Salary
-###Vacancy
+
+### Vacancy
 *	Adding  New Vacancy
 *	Edit the existing  Vacancy
 *	Deleting Vacancy
 *	View Details of Vacancy
 *	Listing of All Vacancy
 
-Reports of the project Online Employee Management System
-Report of All Department
-Report of All Designation
-Report of All Employees 
-Report of All Leave
-Report of All Salary
-Report of All Vacancy
+### Reports of the project Online Employee Management System
+* Report of All Department
+* Report of All Designation
+* Report of All Employees 
+* Report of All Leave
+* Report of All Salary
+* Report of All Vacancy
 
 Note: Report can be viewed by filtering multiple parameters.
