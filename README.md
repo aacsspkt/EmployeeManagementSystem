@@ -4,9 +4,9 @@ Himalaya Organic Farm is an agro-industrial corporation with vast plantations an
 
 This system is used by two users Admin and Employee.
 Functionality performed by Admin Users:
-Login for Admin
-Logout functionality
-Dashboard for Admin User
+* Login for Admin
+* Logout functionality
+* Dashboard for Admin User
 
 ### Manage Department
 *	Adding  New Department
