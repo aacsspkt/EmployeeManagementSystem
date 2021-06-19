@@ -20,6 +20,7 @@ namespace EmployeeManagementSystem.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Employee Management System";
             return View();
         }
 

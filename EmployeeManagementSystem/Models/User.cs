@@ -1,15 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EmployeeManagementSystem.Models
 {
     public class User
     {
-        public int ID { get; private set; }
-        public string Username { get; private set; }
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [MaxLength(200)]
+        public string Email { get; set; }
+
+        [Required]
+        [DisplayName("Role")]
+        public Role RoleName { get; set; }
+        
+        public enum Role
+        {
+            Admin,
+            Employee
+        }
+
+        [Required]
+        [MaxLength(100)]
         public string Password { get; set; }
-        public string Role { get; set; }
+
+        [Required]
+        [NotMapped]
+        [Compare("Password")]
+        [MaxLength(100)]
+        public string ConfirmPassword { get; set; }
     }
 }

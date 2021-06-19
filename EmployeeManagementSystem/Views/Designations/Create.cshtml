@@ -1,0 +1,41 @@
+﻿@model EmployeeManagementSystem.Models.Designation
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create Designation</h1>
+<hr />
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-2">
+                <label asp-for="DesignationName" class="control-label mb-1"></label>
+                <input asp-for="DesignationName" class="form-control" />
+                <span asp-validation-for="DesignationName" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="DepartmentId" class="control-label mb-1"></label>
+                <select asp-for="DepartmentId" class ="form-select" asp-items="ViewBag.DepartmentId"></select>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="InitialSalary" class="control-label mb-1"></label>
+                <input asp-for="InitialSalary" class="form-control" />
+                <span asp-validation-for="InitialSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success shadow" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="text-decoration-none" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

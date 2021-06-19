@@ -1,0 +1,61 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Salary>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="d-flex justify-content-between align-items-baseline mb-2">
+    <h1>Salaries</h1>
+    <a class="btn btn-success shadow" asp-action="Create">Create New</a>
+</div>
+<div class="p-2 shadow rounded-2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Designation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SalaryLevel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalSalaryAmount)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Designation.DesignationName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalaryLevel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalSalaryAmount)
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-primary btn-icon shadow" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                        <a class="btn btn-sm btn-secondary btn-icon shadow" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-square"></i></a>
+                        <a class="btn btn-sm btn-danger btn-icon shadow" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

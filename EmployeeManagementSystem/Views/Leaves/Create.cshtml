@@ -1,0 +1,46 @@
+﻿@model EmployeeManagementSystem.Models.Leave
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create Leave</h1>
+<hr />
+<div class="row mb-3">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-2">
+                <label asp-for="EmployeeId" class="control-label mb-1"></label>
+                <select asp-for="EmployeeId" class ="form-select" asp-items="ViewBag.EmployeeId"></select>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="LeaveStartDate" class="control-label mb-1"></label>
+                <input asp-for="LeaveStartDate" class="form-control" />
+                <span asp-validation-for="LeaveStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="NumberOfDays" class="control-label mb-1"></label>
+                <input asp-for="NumberOfDays" class="form-control" />
+                <span asp-validation-for="NumberOfDays" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="LeaveReason" class="control-label mb-1"></label>
+                <input asp-for="LeaveReason" class="form-control" />
+                <span asp-validation-for="LeaveReason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success shadow" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="text-decoration-none" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
