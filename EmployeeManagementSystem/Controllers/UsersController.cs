@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmployeeManagementSystem.Models;
 using EmployeeManagementSystem.Foundations;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeeManagementSystem.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class UsersController : Controller
     {
         private readonly IUnitOfWork unitWork;
@@ -52,7 +54,7 @@ namespace EmployeeManagementSystem.Controllers
         // POST: Users/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Email,RoleName,Password,ConfirmPassword")] User user)
+        public async Task<IActionResult> Create([Bind("Id,Email,Role,Password,ConfirmPassword")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +84,7 @@ namespace EmployeeManagementSystem.Controllers
         // POST: Users/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Email,RoleName,Password,ConfirmPassword")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Email,Role,Password,ConfirmPassword")] User user)
         {
             if (id != user.Id)
             {

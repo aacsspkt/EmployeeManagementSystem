@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmployeeManagementSystem.Models;
 using EmployeeManagementSystem.Foundations;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeeManagementSystem.Controllers
 {
+    [Authorize]
     public class SalariesController : Controller
     {
         private readonly IUnitOfWork unitWork;

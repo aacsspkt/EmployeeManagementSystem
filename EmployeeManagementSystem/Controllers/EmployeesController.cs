@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using EmployeeManagementSystem.Data;
 using EmployeeManagementSystem.Models;
 using EmployeeManagementSystem.Foundations;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeeManagementSystem.Controllers
 {
+    [Authorize]
     public class EmployeesController : Controller
     {
         private readonly IUnitOfWork unitWork;

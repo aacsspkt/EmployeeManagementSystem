@@ -18,13 +18,7 @@ namespace EmployeeManagementSystem.Models
 
         [Required]
         [DisplayName("Role")]
-        public Role RoleName { get; set; }
-        
-        public enum Role
-        {
-            Admin,
-            Employee
-        }
+        public Role Role { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -35,5 +29,11 @@ namespace EmployeeManagementSystem.Models
         [Compare("Password")]
         [MaxLength(100)]
         public string ConfirmPassword { get; set; }
+    }
+
+    public enum Role
+    {
+        Admin,
+        Employee
     }
 }

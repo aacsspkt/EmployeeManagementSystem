@@ -1,6 +1,7 @@
 using EmployeeManagementSystem.Data;
 using EmployeeManagementSystem.Foundations;
 using EmployeeManagementSystem.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,12 @@ namespace EmployeeManagementSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => {
+                    options.LoginPath = "/Auth";
+                    options.LogoutPath = "/";
+                    options.AccessDeniedPath = "/Auth/AccessDenied";
+                });
             services.AddDbContext<EmployeeManagementSystemContext>(option =>
             {
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -55,6 +62,7 @@ namespace EmployeeManagementSystem
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

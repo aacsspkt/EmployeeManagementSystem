@@ -1,14 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
 }
 
-    <div class="row p-5">
-        <div class="col">
-
-            <h1 class="display-1 fw-normal text-secondary">Welcome</h1>
-            <h1 class="display-1 fw-normal text-warning">Himalaya Organic Farm</h1>
-            <h2 class="text-black-50 mb-sm-4">Employee Management System</h2>
-            <a class="btn btn-outline-primary shadow"  @*asp-controller="Home" asp-action="Login"*@>Let's Get In</a>
-        </div>
+<div class="row p-5">
+    <div class="col">
+        <h1 class="display-1 fw-bold text-warning">Himalaya Organic Farm</h1>
+        <h2 class="text-black-50 mb-sm-4">Employee Management System</h2>
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <a class="btn btn-warning shadow" asp-controller="Auth" asp-action="Index">Let's Get In</a>
+        }
     </div>
+</div>
 

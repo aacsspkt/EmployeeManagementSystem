@@ -7,22 +7,33 @@
     <title>@ViewData["Title"] - Employee Management System</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="~/lib/icons/bootstrap-icons.css" type="text/css" />
-    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-toggleable navbar-dark bg-dark box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-toggleable navbar-dark bg-gradient bg-dark box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Employee Mgmt</a>
+                <a class="navbar-brand text-warning" asp-area="" asp-controller="Home" asp-action="Index">Employee Mgmt</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="navbarSupportedContent" class="navbar-collapse collapse">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item ">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Home</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Departments" asp-action="Index">Department</a>
                         </li>
@@ -45,14 +56,22 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="Index">User</a>
                         </li>
                     </ul>
-                    @*<ul class="navbar-nav">
-                        <li>
-                            <a class="btn btn-sm p-1 btn-warning" asp-area="" asp-controller="" asp-action="">Login</a>
-                        </li>
-                        <li>
-                            <a class="btn btn-sm p-1 btn-warning" asp-area="" asp-controller="" asp-action="">Logout</a>
-                        </li>
-                    </ul>*@
+                    <form id="logout" asp-action="Logout" asp-controller="Auth" class="d-none">
+                    </form>
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <input form="logout" type="submit" value="Logout" class="btn btn-sm px-2 py-1 btn-light" />
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a class="btn btn-sm py-1 px-2 btn-light" asp-area="" asp-controller="Auth" asp-action="Index">Login</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -71,6 +90,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/42414426f2.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

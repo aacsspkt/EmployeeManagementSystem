@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "AccessDenied";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex align-items-center flex-column m-sm-4 m-md-5">
+    <h1 class="display-3 fw-normal top-50 text-black-50">Forbidden</h1>
+    <p class="text-black-50">Oops! You are not authorized to access.</p>
+    <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Go to Home</a>
+</div>
