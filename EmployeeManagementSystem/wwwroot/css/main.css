@@ -1,6 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
+﻿
 a.navbar-brand {
     white-space: normal;
     text-align: center;
@@ -17,16 +15,12 @@ a {
     border-color: #1861ac;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
 html {
     font-size: 14px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -52,12 +46,6 @@ button.accept-policy {
     line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-
-}
-
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
@@ -79,9 +67,27 @@ header {
 th, td {
     font-size: 13.5px;
 }
+
 td {
     word-break: break-all;
 }
-.btn-icon{
-    padding: .05rem .3rem;
+
+.btn-icon {
+    padding: .04rem .3rem;
+}
+
+.dashboard-cards .card-action strong {
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.card .card-image {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.card .card-image i {
+    font-size: 55px;
+    opacity: .4;
 }

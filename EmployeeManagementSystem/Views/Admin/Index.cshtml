@@ -1,0 +1,196 @@
+﻿@inject EmployeeManagementSystem.Foundations.IUnitOfWork unitWork
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var users = await unitWork.Users.GetAllAsync();
+    users = users.Take(5);
+
+    var leaves = await unitWork.Leaves.GetAllAsync() ;
+}
+
+<div class="header">
+    <h1 class="page-header">
+        Dashboard
+    </h1>
+    <hr />
+</div>
+<div id="page-inner">
+    <div class="dashboard-cards">
+        <div class="row g-md-4 g-sm-3 mb-4">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="card bg-danger">
+                    <div class="row">
+                        <div class="col-4 card-image">
+                            <i class="fas fa-briefcase mt-4"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <div class="text-white">
+                                    <h3>@ViewBag.Departments</h3>
+                                </div>
+                                <div class="card-action">
+                                    <strong>Departments</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="card bg-warning">
+                    <div class="row">
+                        <div class="col-4 card-image">
+                            <i class="fas fa-user-tag mt-4"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <div class="text-white">
+                                    <h3>@ViewBag.Designations</h3>
+                                </div>
+                                <div class="card-action">
+                                    <strong>Designations</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="card bg-primary">
+                    <div class="row">
+                        <div class="col-4 card-image">
+                            <i class="fas fa-users mt-4"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <div class="text-white">
+                                    <h3>@ViewBag.Employees</h3>
+                                </div>
+                                <div class="card-action">
+                                    <strong>Employees</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="card bg-success">
+                    <div class="row">
+                        <div class="col-4 card-image">
+                            <i class="fas fa-user-cog mt-4"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <div class="text-white">
+                                    <h3>@ViewBag.Leaves</h3>
+                                </div>
+                                <div class="card-action">
+                                    <strong>Leaves</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="card bg-info">
+                    <div class="row">
+                        <div class="col-4 card-image">
+                            <i class="fas fa-user-cog mt-4"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <div class="text-white">
+                                    <h3>@ViewBag.Vacancy</h3>
+                                </div>
+                                <div class="card-action">
+                                    <strong>Vacancy</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="card bg-secondary">
+                    <div class="row">
+                        <div class="col-4 card-image">
+                            <i class="fas fa-user mt-4"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <div class="text-white">
+                                    <h3>@ViewBag.Users</h3>
+                                </div>
+                                <div class="card-action">
+                                    <strong>Users</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="card p-3">
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h5 class="fw-bold">Users</h5>
+                    <a class="btn btn-sm btn-success rounded-circle shadow btn-icon" asp-controller="Users" asp-action="Create"><i class="bi bi-plus fs-6"></i></a>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var user in users)
+                    {
+                        <li class="list-group-item" ondblclick="window.location('/Users/Edit/@user.Id')">
+                            <div class="text-secondary fw-bold overflow-auto">
+                                @user.Email
+                            </div>
+                            <small class="text-black-50">@user.Role</small>
+                        </li>
+                    }
+                </ul>
+                <div class="my-2">
+                    <a class="text-decoration-none" asp-controller="Users" asp-action="Index">See All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="card p-3">
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h5 class="fw-bold">Leaves</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-baseline text-dark">
+                        <strong>Employee</strong>
+                        <strong>No. of Leaves</strong>
+                    </li>
+                    @foreach (var leave in leaves)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-baseline text-secondary">
+                            <div>
+                                @leave.Employee.FullName
+                            </div>
+                            <div>
+                                @leaves.Where(l => l.Employee == leave.Employee).Count()
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <div class="my-2">
+                    <a class="text-decoration-none" asp-controller="Leaves" asp-action="Index">See More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
