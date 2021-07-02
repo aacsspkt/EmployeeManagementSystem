@@ -93,7 +93,7 @@ namespace EmployeeManagementSystem.Controllers
         // POST: Salaries/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,EmployeeId,DesignationId,SalaryLevel,TotalSalaryAmount")] Salary salary)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,EmployeeId,DesignationId,SalaryLevel,TotalSalaryAmount")] Salary salary)
         {
             if (id != salary.Id)
             {

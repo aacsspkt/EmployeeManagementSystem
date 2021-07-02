@@ -57,7 +57,7 @@ namespace EmployeeManagementSystem.Controllers
         // POST: Vacancies/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,DesignationId,NumberOfQuota,AnnounceDate,ExpiryDate")] Vacancy vacancy)
+        public async Task<IActionResult> Create([Bind("Id,DesignationId,NumberOfQuota,AnnounceDate,ExpiryDate")] Vacancy vacancy)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace EmployeeManagementSystem.Controllers
         // POST: Vacancies/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,DesignationId,NumberOfQuota,AnnounceDate,ExpiryDate")] Vacancy vacancy)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DesignationId,NumberOfQuota,AnnounceDate,ExpiryDate")] Vacancy vacancy)
         {
             if (id != vacancy.Id)
             {
