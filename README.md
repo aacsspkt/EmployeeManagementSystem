@@ -79,7 +79,7 @@ First of all you'll require some tools as mentioned below:
 * Remove the string value for DefaultConnection and paste the connection string you copied earlier as a string.
 * Open the package manager console from the tools tab situated at the top of visual studio.
 * Run command "update-database".
-* Then once more open the SSMS and populate the table with some data especially the Users table with at least one row with 0 as value in the Role column. You can take examples from the data from excel file if you needed. 
+* Then once more open the SSMS and populate the table with some data especially the Users table with at least one row with 0 as value in the Role column. You can take examples from the data from excel file if required. 
 * Then build and run the project from the visual studio.
 * Use the same user credential as inserted in the user table.
 
