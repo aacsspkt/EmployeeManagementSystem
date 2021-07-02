@@ -97,7 +97,7 @@ namespace EmployeeManagementSystem.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("nvarchar(300)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("HireDate")
                         .HasColumnType("Date");
