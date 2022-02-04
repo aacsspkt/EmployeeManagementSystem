@@ -48,16 +48,6 @@ Functionality performed by Admin Users:
 *	View Details of Vacancy
 *	Listing of All Vacancy
 
-### Reports of the project Online Employee Management System
-* Report of All Department
-* Report of All Designation
-* Report of All Employees 
-* Report of All Leave
-* Report of All Salary
-* Report of All Vacancy
-
-Note: Report can be viewed by filtering multiple parameters.
-
 
 ## How to intall it?
 
