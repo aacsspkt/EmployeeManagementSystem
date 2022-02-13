@@ -9,8 +9,8 @@ Functionality performed by Admin Users:
 * Manage Designation
 *	Manage Employee
 * Manage Leave
-* Salary
-* Vacancy
+* Manage Salary
+* Manage Vacancy
 
 ## Installation
 
