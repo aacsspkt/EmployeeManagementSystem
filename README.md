@@ -5,51 +5,14 @@ Functionality performed by Admin Users:
 * Login for Admin
 * Logout functionality
 * Dashboard for Admin User
+* Manage Department
+* Manage Designation
+*	Manage Employee
+* Manage Leave
+* Salary
+* Vacancy
 
-### Manage Department
-*	Adding  New Department
-*	Edit the existing  Department
-*	Deleting Department
-*	View Details of Department
-*	Listing of All Department
-
-### Manage Designation
-*	Adding  New Designation
-*	Edit the existing  Designation
-*	Deleting Designation
-*	View Details of Designation
-*	Listing of All Designation
-
-### Employee
-*	Adding  New Employee
-*	Edit the existing  Employee
-*	Deleting Employee
-*	View Details of Employee
-*	Listing of All Employee
-
-### Leave
-*	Adding  New Leave
-*	Edit the existing  Leave
-*	Deleting Leave
-*	View Details of Leave
-*	Listing of All Leave
-
-### Salary
-*	Adding  New Salary
-*	Edit the existing  Salary
-*	Deleting Salary
-*	View Details of Salary
-*	Listing of All Salary
-
-### Vacancy
-*	Adding  New Vacancy
-*	Edit the existing  Vacancy
-*	Deleting Vacancy
-*	View Details of Vacancy
-*	Listing of All Vacancy
-
-
-## How to intall it?
+## Installation
 
 ### Tools required
 First of all you'll require some tools as mentioned below:
