@@ -1,7 +1,6 @@
 # EmployeeManagementSystem
 
 This system is used by two users Admin and Employee.
-Functionality performed by Admin Users:
 * Login for Admin
 * Logout functionality
 * Dashboard for Admin User
